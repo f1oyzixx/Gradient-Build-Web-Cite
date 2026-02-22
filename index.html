@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Градиент Build — Главная</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="overlay" class="overlay" onclick="closeAll()"></div>
+
+    <div id="sideCatalog" class="side-panel side-catalog">
+        <div class="panel-header">
+            <span class="panel-title">Каталог</span>
+            <button class="close-btn" onclick="closeAll()">&times;</button>
+        </div>
+        <nav class="side-nav">
+            <a href="#"><img src="https://img.icons8.com/ios/24/000000/paint-roller.png"> Декор</a>
+            <a href="#"><img src="https://img.icons8.com/ios/24/000000/drill.png"> Инструмент</a>
+            <a href="#"><img src="https://img.icons8.com/ios/24/000000/bench.png"> Сад и досуг</a>
+            <a href="#"><img src="https://img.icons8.com/ios/24/000000/faucet.png"> Сантехника</a>
+            <a href="#"><img src="https://img.icons8.com/ios/24/000000/air-conditioner.png"> Климатическая техника</a>
+            <a href="#"><img src="https://img.icons8.com/ios/24/000000/curtains.png"> Текстиль для дома</a>
+            <a href="#"><img src="https://img.icons8.com/ios/24/000000/paint-bucket.png"> Краски</a>
+            <a href="#"><img src="https://img.icons8.com/ios/24/000000/box.png"> Хранение и порядок</a>
+            <a href="#"><img src="https://img.icons8.com/ios/24/000000/chef-hat.png"> Кухни</a>
+            <a href="#"><img src="https://img.icons8.com/ios/24/000000/tile.png"> Плитка</a>
+            <a href="#"><img src="https://img.icons8.com/ios/24/000000/light-switch.png"> Электрика</a>
+            <a href="#"><img src="https://img.icons8.com/ios/24/000000/floor.png"> Напольные покрытия</a>
+            <a href="#"><img src="https://img.icons8.com/ios/24/000000/door.png"> Окна и двери</a>
+            <a href="#"><img src="https://img.icons8.com/ios/24/000000/bricks.png"> Стройматериалы</a>
+        </nav>
+    </div>
+
+    <div id="sideCart" class="side-panel side-cart">
+        <div class="panel-header">
+            <span class="panel-title">Корзина</span>
+            <button class="close-btn" onclick="closeAll()">&times;</button>
+        </div>
+        <div class="cart-content">
+            <div class="cart-empty-state">
+                <div class="cart-icon-big">🛒</div>
+                <h2>В корзине пока пусто</h2>
+                <p>Но это легко исправить! Загляните в каталог, чтобы найти всё для ремонта.</p>
+                <button class="cart-action-btn" onclick="closeAll()">Перейти к покупкам</button>
+            </div>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="container header-flex">
+            <a href="index.html" class="logo-link">
+                <img src="images\logo.png" alt="Градиент" class="main-logo">
+            </a>
+
+            <button class="catalog-btn" onclick="openCatalog()">
+                <div class="burger-icon">
+                    <span class="line-blue"></span>
+                    <span class="line-orange"></span>
+                    <span class="line-green"></span>
+                </div>
+                Каталог
+            </button>
+
+            <div class="search-wrapper">
+                <input type="text" placeholder="Поиск" class="search-input">
+                <span class="search-icon">🔍</span>
+            </div>
+
+            <a href="registration.html" class="profile-link">
+                <img src="https://img.icons8.com/ios-glyphs/30/000000/user--v1.png" alt="Профиль">
+            </a>
+
+            <button class="cart-btn" onclick="openCart()">
+                <img src="https://img.icons8.com/ios-glyphs/30/ffffff/shopping-cart.png" alt="Корзина">
+            </button>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="product-grid">
+            <a href="#" class="grid-item item-big"><img src="images\derevo.png" alt="Дерево"><p>Пиломатериалы</p></a>
+            <a href="#" class="grid-item item-medium"><img src="images\oboi.png" alt="Обои"><p>Обои</p></a>
+            <a href="#" class="grid-item item-small"><img src="images\mebel.png" alt="Шкафы"><p>Шкафы</p></a>
+            <a href="#" class="grid-item item-small"><img src="images\instruments.png" alt="Инструменты"><p>Инструменты</p></a>
+            <a href="#" class="grid-item item-medium"><img src="images\kraski.png" alt="Краски"><p>Краски</p></a>
+            <a href="#" class="grid-item item-small"><img src="images\svet.png" alt="Свет"><p>Свет</p></a>
+            <a href="#" class="grid-item item-small"><img src="images\kran.png" alt="Сантехника"><p>Сантехника</p></a>
+        </div>
+    </main>
+
+    <script>
+        function openCatalog() {
+            document.getElementById("sideCatalog").classList.add("open");
+            document.getElementById("overlay").classList.add("active");
+            document.body.style.overflow = "hidden";
+        }
+        function openCart() {
+            document.getElementById("sideCart").classList.add("open");
+            document.getElementById("overlay").classList.add("active");
+            document.body.style.overflow = "hidden";
+        }
+        function closeAll() {
+            document.getElementById("sideCatalog").classList.remove("open");
+            document.getElementById("sideCart").classList.remove("open");
+            document.getElementById("overlay").classList.remove("active");
+            document.body.style.overflow = "auto";
+        }
+    </script>
+</body>
+</html>
